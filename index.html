@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Student Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+        
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Add/Edit Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="editIndex" value="">
+                <div class="form-group">
+                    <label for="fullName">Student Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="number" id="rollNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" id="courseName" required>
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills (comma-separated)</label>
+                    <input type="text" id="skills" placeholder="HTML, CSS, JavaScript" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn" class="btn btn-submit">Submit</button>
+                    <button type="button" id="cancelBtn" class="btn btn-cancel" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by name or roll number...">
+            </div>
+            <div class="sort-container">
+                <label for="sortBy">Sort By:</label>
+                <select id="sortBy">
+                    <option value="name">Name</option>
+                    <option value="roll">Roll Number</option>
+                    <option value="course">Course</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Loading students data...</p>
+        </div>
+
+        <!-- Students Table Section -->
+        <section class="table-section">
+            <h2>Students List</h2>
+            <div class="table-container">
+                <table id="studentsTable">
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Student Name</th>
+                            <th>Roll Number</th>
+                            <th>Course</th>
+                            <th>Skills</th>
+                            <th>Contact Info</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTableBody">
+                        <!-- Table rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+                <div id="noStudentsMessage" class="no-data">No students found</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
